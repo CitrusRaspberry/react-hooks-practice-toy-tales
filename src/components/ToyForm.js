@@ -1,9 +1,9 @@
 import React from "react";
 
-function ToyForm() {
+function ToyForm({ addToy }) {
   return (
     <div className="container">
-      <form className="add-toy-form">
+      <form onSubmit={addToy} className="add-toy-form">
         <h3>Create a toy!</h3>
         <input
           type="text"

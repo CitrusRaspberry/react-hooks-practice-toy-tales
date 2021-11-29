@@ -1,17 +1,17 @@
 import React from "react";
 
-function ToyCard() {
+function ToyCard({ id, name, image, likes, delToy, likeToy }) {
   return (
     <div className="card">
-      <h2>{"" /* Toy's Name */}</h2>
+      <h2>{name}</h2>
       <img
-        src={"" /* Toy's Image */}
-        alt={"" /* Toy's Name */}
+        src={image}
+        alt={name}
         className="toy-avatar"
       />
-      <p>{"" /* Toy's Likes */} Likes </p>
-      <button className="like-btn">Like {"<3"}</button>
-      <button className="del-btn">Donate to GoodWill</button>
+      <p>{likes} Likes </p>
+      <button onClick={() => likeToy(id, likes)} className="like-btn">Like {"<3"}</button>
+      <button onClick={() => delToy(id)} className="del-btn">Donate to GoodWill</button>
     </div>
   );
 }
